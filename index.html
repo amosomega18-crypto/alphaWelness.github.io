@@ -114,6 +114,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   .certs-grid{grid-template-columns:1fr;}
   .faq-grid{grid-template-columns:1fr;}
   .booking-steps{grid-template-columns:1fr;}
+  .booking-two-path{grid-template-columns:1fr!important;}
   footer{padding:36px 20px;}
   .footer-cta{padding:60px 20px;}
 }
@@ -289,53 +290,78 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
 <section class="booking" id="booking">
   <div class="booking-inner">
     <p class="section-eyebrow">Start today</p>
-    <h2 class="section-title">Book your free <em>discovery call</em></h2>
-    <p class="booking-sub">30 minutes. No commitment. We talk about your goals, I'll tell you exactly how I can help &mdash; and you decide if it's the right fit.</p>
-    <div class="booking-steps">
-      <div class="booking-step">
-        <div class="booking-step-num">01</div>
-        <div class="booking-step-title">Pick a date &amp; time</div>
-        <div class="booking-step-body">Choose any available slot in the calendar below. Morning, afternoon or evening.</div>
+    <h2 class="section-title">Two ways to <em>get started</em></h2>
+    <p class="booking-sub">Not sure yet? Book a free call. Ready to go? Sign up directly and get your programme today.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:16px;">
+
+      <!-- PATH 1 — DISCOVERY CALL -->
+      <div style="background:var(--dark);padding:48px 40px;display:flex;flex-direction:column;gap:24px;">
+        <div>
+          <div style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Path 1 &mdash; Not sure yet?</div>
+          <div style="font-family:'Playfair Display',serif;font-size:26px;color:var(--white);line-height:1.2;margin-bottom:14px;">Book a free<br><em style="color:var(--gold);">discovery call</em></div>
+          <p style="font-size:14px;color:var(--muted);line-height:1.8;">We talk for 30 minutes. You tell me your goals, I'll tell you exactly how I can help. No commitment, no pressure &mdash; just a real conversation in English or French.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
+            <span style="color:var(--gold);">→</span> 30 minutes &middot; completely free
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
+            <span style="color:var(--gold);">→</span> English or French &mdash; your choice
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
+            <span style="color:var(--gold);">→</span> No obligation whatsoever
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
+            <span style="color:var(--gold);">→</span> Pick any available time slot
+          </div>
+        </div>
+        <div>
+          <a href="https://calendar.app.google/SeMUbxCouqWiTRa26" target="_blank" rel="noopener" style="background:none;border:1px solid var(--gold);color:var(--gold);font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;padding:16px 32px;text-decoration:none;display:inline-block;transition:all 0.2s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--black)';" onmouseout="this.style.background='none';this.style.color='var(--gold)';">
+            Book your free call &rarr;
+          </a>
+          <p style="font-size:11px;color:var(--muted);margin-top:12px;">Opens Google Calendar &middot; Instant confirmation by email</p>
+        </div>
       </div>
-      <div class="booking-step">
-        <div class="booking-step-num">02</div>
-        <div class="booking-step-title">Confirm your booking</div>
-        <div class="booking-step-body">Add your name and email. You'll get an instant confirmation with call details.</div>
+
+      <!-- PATH 2 — SIGN UP DIRECTLY -->
+      <div style="background:var(--surface);padding:48px 40px;display:flex;flex-direction:column;gap:24px;position:relative;border:1px solid rgba(200,169,90,0.35);">
+        <div style="position:absolute;top:0;left:0;right:0;background:var(--gold);padding:8px;text-align:center;">
+          <span style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--black);font-weight:500;">Ready to commit &mdash; most popular</span>
+        </div>
+        <div style="margin-top:24px;">
+          <div style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Path 2 &mdash; Ready to go?</div>
+          <div style="font-family:'Playfair Display',serif;font-size:26px;color:var(--white);line-height:1.2;margin-bottom:14px;">Sign up &amp; get your<br><em style="color:var(--gold);">programme today</em></div>
+          <p style="font-size:14px;color:var(--muted);line-height:1.8;">Skip the call &mdash; sign up directly on the Everfit app, complete your onboarding, and receive your fully personalised programme within 24 hours.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
+            <span style="color:var(--gold);">→</span> Personalised training programme from day 1
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
+            <span style="color:var(--gold);">→</span> Nutrition framework + recovery protocols
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
+            <span style="color:var(--gold);">→</span> Weekly check-ins + WhatsApp support
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
+            <span style="color:var(--gold);">→</span> Starting from &euro;300/month
+          </div>
+        </div>
+        <div>
+          <a href="https://invite.everfit.io/6FS4A74HUD" target="_blank" rel="noopener" class="btn-primary" style="font-size:11px;padding:16px 32px;letter-spacing:0.22em;">
+            Start my programme now &rarr;
+          </a>
+          <p style="font-size:11px;color:var(--muted);margin-top:12px;">Opens Everfit app &middot; Programme delivered within 24 hours</p>
+        </div>
       </div>
-      <div class="booking-step">
-        <div class="booking-step-num">03</div>
-        <div class="booking-step-title">We talk. You decide.</div>
-        <div class="booking-step-body">30 minutes. No pitch, no pressure. Just a real conversation about your goals.</div>
-      </div>
+
     </div>
-    <div style="background:var(--dark);border:1px solid var(--border);padding:56px 40px;margin-bottom:16px;display:flex;flex-direction:column;align-items:center;gap:28px;">
-      <div style="text-align:center;">
-        <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--white);margin-bottom:12px;">Ready to book your free call?</div>
-        <p style="font-size:14px;color:var(--muted);max-width:420px;line-height:1.8;">Click below to open my booking calendar. Pick any available 30-minute slot that works for you &mdash; you'll get an instant confirmation by email.</p>
-      </div>
-      <a href="https://calendar.app.google/SeMUbxCouqWiTRa26" target="_blank" rel="noopener" class="btn-primary" style="font-size:13px;padding:20px 56px;letter-spacing:0.22em;">
-        Open booking calendar &rarr;
-      </a>
-      <div style="display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
-        <div style="text-align:center;">
-          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);">30 min</div>
-          <div style="font-size:11px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-top:4px;">Duration</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);">Free</div>
-          <div style="font-size:11px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-top:4px;">No cost</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);">EN / FR</div>
-          <div style="font-size:11px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-top:4px;">Your language</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);">0</div>
-          <div style="font-size:11px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-top:4px;">Obligation</div>
-        </div>
-      </div>
-    </div>
-    <p class="booking-note">Opens Google Calendar in a new tab &middot; Free &middot; 30 min &middot; English &amp; French</p>
+
+    <p class="booking-note" style="text-align:center;padding-top:8px;">
+      Not sure which path to take? &nbsp;
+      <a href="https://calendar.app.google/SeMUbxCouqWiTRa26" target="_blank" rel="noopener">Start with the free call &rarr;</a>
+    </p>
   </div>
 </section>
 
