@@ -65,7 +65,7 @@ section{padding:96px 48px;}
 .callout-price{font-family:'Playfair Display',serif;font-size:38px;color:var(--gold);margin-bottom:4px;}
 .callout-price span{font-family:'Jost',sans-serif;font-size:14px;color:var(--muted);}
 .about{background:var(--dark);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:52px;}
+.about-grid{display:grid;grid-template-columns:360px 1fr 1fr;gap:48px;align-items:start;margin-top:52px;}
 .about-text p{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:18px;}
 .about-text p strong{color:var(--white);font-weight:500;}
 .certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:32px;}
@@ -101,6 +101,34 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
 .footer-col a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
 .footer-col a:hover{color:var(--white);}
 .footer-legal{width:100%;padding-top:28px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+/* About photo */
+.about-photo-wrap{overflow:hidden;}
+.about-photo{width:100%;height:520px;object-fit:cover;object-position:top center;display:block;}
+/* Nutrition */
+.nutrition{background:var(--surface);}
+.nutrition-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:52px;}
+.meal-card{background:var(--dark);overflow:hidden;transition:background 0.2s;}
+.meal-card:hover{background:var(--surface);}
+.meal-img{width:100%;height:220px;object-fit:cover;display:block;}
+.meal-body{padding:24px 22px;}
+.meal-name{font-size:15px;font-weight:500;margin-bottom:16px;}
+.meal-macros{display:flex;align-items:flex-end;gap:20px;}
+.macro-cal-wrap{text-align:left;}
+.macro-cal{font-family:'Playfair Display',serif;font-size:32px;color:var(--gold);line-height:1;}
+.macro-cal-label{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);}
+.macro-pills{display:flex;gap:14px;align-items:flex-end;}
+.macro-item{text-align:center;}
+.macro-num{font-size:14px;font-weight:500;color:var(--white);}
+.macro-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+/* Reviews */
+.reviews{background:var(--dark);}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:52px;}
+.review-card{background:var(--dark);padding:36px 28px;transition:background 0.2s;}
+.review-card:hover{background:var(--surface);}
+.stars{color:var(--gold);font-size:15px;letter-spacing:3px;margin-bottom:16px;}
+.review-text{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:20px;font-style:italic;}
+.review-author{font-size:13px;font-weight:500;color:var(--white);}
+.review-meta{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:0.1em;text-transform:uppercase;}
 @media(max-width:768px){
   nav{padding:16px 20px;}
   .nav-links{display:none;}
@@ -117,6 +145,8 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   .booking-two-path{grid-template-columns:1fr!important;}
   footer{padding:36px 20px;}
   .footer-cta{padding:60px 20px;}
+  .nutrition-grid,.reviews-grid{grid-template-columns:1fr;}
+  .about-photo{height:380px;}
 }
 </style>
 </head>
@@ -127,6 +157,8 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#how">How it works</a></li>
+    <li><a href="#nutrition">Nutrition</a></li>
+    <li><a href="#reviews">Reviews</a></li>
     <li><a href="#booking">Book a call</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
@@ -248,10 +280,80 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   </div>
 </section>
 
+<section class="nutrition" id="nutrition">
+  <p class="section-eyebrow">Nutrition</p>
+  <h2 class="section-title">Fuel your body <em>the right way</em></h2>
+  <p style="font-size:15px;color:var(--muted);max-width:580px;line-height:1.85;">Real food. Real results. Every nutrition framework is built around your goals and your lifestyle &mdash; no crash diets, no rigid meal plans.</p>
+  <div class="nutrition-grid">
+
+    <div class="meal-card">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&w=600&q=80" alt="High Protein Chicken Bowl" class="meal-img">
+      <div class="meal-body">
+        <div class="meal-name">High Protein Chicken Bowl</div>
+        <div class="meal-macros">
+          <div class="macro-cal-wrap">
+            <div class="macro-cal">420</div>
+            <div class="macro-cal-label">kcal</div>
+          </div>
+          <div class="macro-pills">
+            <div class="macro-item"><div class="macro-num">42g</div><div class="macro-label">Protein</div></div>
+            <div class="macro-item"><div class="macro-num">35g</div><div class="macro-label">Carbs</div></div>
+            <div class="macro-item"><div class="macro-num">12g</div><div class="macro-label">Fat</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="meal-card">
+      <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&w=600&q=80" alt="Salmon & Avocado Plate" class="meal-img">
+      <div class="meal-body">
+        <div class="meal-name">Salmon &amp; Avocado Plate</div>
+        <div class="meal-macros">
+          <div class="macro-cal-wrap">
+            <div class="macro-cal">380</div>
+            <div class="macro-cal-label">kcal</div>
+          </div>
+          <div class="macro-pills">
+            <div class="macro-item"><div class="macro-num">34g</div><div class="macro-label">Protein</div></div>
+            <div class="macro-item"><div class="macro-num">18g</div><div class="macro-label">Carbs</div></div>
+            <div class="macro-item"><div class="macro-num">22g</div><div class="macro-label">Fat</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="meal-card">
+      <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&w=600&q=80" alt="Clean Breakfast Bowl" class="meal-img">
+      <div class="meal-body">
+        <div class="meal-name">Clean Breakfast Bowl</div>
+        <div class="meal-macros">
+          <div class="macro-cal-wrap">
+            <div class="macro-cal">310</div>
+            <div class="macro-cal-label">kcal</div>
+          </div>
+          <div class="macro-pills">
+            <div class="macro-item"><div class="macro-num">28g</div><div class="macro-label">Protein</div></div>
+            <div class="macro-item"><div class="macro-num">30g</div><div class="macro-label">Carbs</div></div>
+            <div class="macro-item"><div class="macro-num">9g</div><div class="macro-label">Fat</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;margin-top:48px;">
+    <p style="font-size:14px;color:var(--muted);margin-bottom:24px;">Nutrition coaching is included in every programme &mdash; tailored to your goals, not a generic plan.</p>
+    <a href="#booking" class="btn-primary">Get your nutrition plan</a>
+  </div>
+</section>
+
 <section class="about" id="about">
   <p class="section-eyebrow">About Alpha</p>
   <h2 class="section-title">Your English speaking <em>personal trainer</em> in France</h2>
   <div class="about-grid">
+    <div class="about-photo-wrap">
+      <img src="images/alpha-portrait.jpg" class="about-photo" alt="Alpha Amos — English Speaking Personal Trainer France">
+    </div>
     <div class="about-text">
       <p>I'm <strong>Alpha (Omega) Amos</strong> &mdash; a bilingual fitness and wellness coach based in France with over 8 years of experience working across luxury 5-star resorts, premium spa facilities, and high-end urban fitness clubs in Europe and internationally.</p>
       <p>My career has taken me from the <strong>LUX Grand Baie resort in Mauritius</strong> &mdash; where I ranked #1 in personal training sales for six consecutive months &mdash; to <strong>Fitness First and Gym Nation in Dubai</strong>, and back to France where I now coach clients online across the country and internationally.</p>
@@ -396,6 +498,38 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   </div>
 </section>
 
+<section class="reviews" id="reviews">
+  <p class="section-eyebrow">Client reviews</p>
+  <h2 class="section-title">What clients <em>are saying</em></h2>
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Alpha is an exceptional coach. His approach is holistic, professional, and highly personalised. I&rsquo;ve seen more progress in 3 months with him than in years of training alone."</p>
+      <div class="review-author">Google Review</div>
+      <div class="review-meta">via Google &middot; 5 stars</div>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"As an expat in France, finding an English-speaking trainer was a real challenge. Alpha made it seamless &mdash; bilingual coaching, a great programme, and real results."</p>
+      <div class="review-author">Google Review</div>
+      <div class="review-meta">via Google &middot; 5 stars</div>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">"Highly professional, motivating, and knowledgeable. The online format works perfectly and Alpha is always available when I need support. Strongly recommend."</p>
+      <div class="review-author">Google Review</div>
+      <div class="review-meta">via Google &middot; 5 stars</div>
+    </div>
+
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="https://g.page/r/CfGG3j_hQfuOEAE/review" target="_blank" rel="noopener" class="btn-ghost">Leave a review on Google &rarr;</a>
+  </div>
+</section>
+
 <div class="footer-cta">
   <p class="section-eyebrow" style="text-align:center;">Ready to start?</p>
   <h2 class="section-title" style="max-width:580px;margin:0 auto 20px;">The best time to start was last year.<br>The second best time is <em>today.</em></h2>
@@ -411,7 +545,9 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   <div class="footer-col">
     <a href="#who">Who I work with</a>
     <a href="#how">How it works</a>
+    <a href="#nutrition">Nutrition</a>
     <a href="#about">About</a>
+    <a href="#reviews">Reviews</a>
     <a href="#booking">Book a call</a>
     <a href="#faq">FAQ</a>
   </div>
