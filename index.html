@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AlphaWellness | English Speaking Personal Trainer France</title>
-<meta name="description" content="AlphaWellness — English speaking personal trainer and online wellness coach in France. Bilingual coaching for expats and professionals. NASM & ISSA certified. 8+ years luxury hospitality experience. Book a free discovery call.">
+<title>AlphaWellness | Total Wellness Coach &middot; France &amp; Worldwide</title>
+<meta name="description" content="AlphaWellness — Total Wellness Coach in France. Bilingual coaching in fitness, yoga, pilates, breathwork, and massage therapy. For expats and high-performers. NASM & ISSA certified. 8+ years luxury hospitality experience. Book a free discovery call.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; frame-ancestors 'none';">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
-<meta name="keywords" content="english speaking personal trainer france, online personal trainer france, personal trainer for expats france, bilingual fitness coach france, wellness coach france, english fitness coach paris, nasm certified trainer france">
+<meta name="keywords" content="total wellness coach france, english speaking personal trainer france, yoga coach france, pilates coach france, breathwork coach france, massage therapist france, bilingual wellness coach france, coach bien-etre france, holistic fitness coach france, nasm certified trainer france">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -232,8 +232,8 @@ section{padding:96px 48px;position:relative;}
 /* ─── REVIEWS ───────────────────────────────────────── */
 .reviews{
   background-image:
-    linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.84)),
-    url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&w=1920&q=80');
+    linear-gradient(rgba(0,0,0,0.82),rgba(0,0,0,0.86)),
+    url('images/alpha-coaching.jpg');
   background-size:cover;background-position:center;
 }
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:52px;}
@@ -276,6 +276,73 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
 .footer-col a:hover{color:var(--white);}
 .footer-legal{width:100%;padding-top:28px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 
+/* ─── SERVICES ──────────────────────────────────────── */
+.services{
+  background:linear-gradient(180deg,var(--black) 0%,var(--dark) 50%,var(--black) 100%);
+  padding:120px 48px;
+  position:relative;
+}
+.services::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:0.3;
+}
+.services-intro{max-width:780px;margin-bottom:64px;}
+.services-sub{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:19px;color:var(--gold-light);
+  margin-top:10px;line-height:1.6;letter-spacing:0.01em;
+}
+.services-sub em{color:var(--gold);font-style:italic;}
+.services-grid{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:68px;align-items:start;}
+.services-photo-wrap{
+  position:relative;
+  border:1px solid var(--border);
+  overflow:hidden;
+  background:var(--dark);
+}
+.services-photo{width:100%;height:auto;display:block;}
+.services-photo-tagline{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(0,0,0,0.92));
+  padding:48px 24px 22px;
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:16px;color:var(--gold-light);text-align:center;letter-spacing:0.04em;
+}
+.services-list{
+  display:flex;flex-direction:column;
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);
+}
+.service-item{
+  background:rgba(20,20,18,0.88);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  padding:24px 28px;
+  display:flex;align-items:flex-start;gap:22px;
+  transition:background 0.3s,transform 0.3s,border-color 0.3s;
+  border-left:2px solid transparent;
+}
+.service-item:hover{background:rgba(26,26,24,0.96);border-left-color:var(--gold);}
+.service-icon{
+  flex-shrink:0;width:54px;height:54px;
+  background:rgba(200,169,90,0.10);
+  border:1px solid rgba(200,169,90,0.32);
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+}
+.service-icon svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
+.service-text{flex:1;}
+.service-name{
+  font-size:15px;font-weight:500;
+  color:var(--white);margin-bottom:4px;
+  letter-spacing:0.18em;text-transform:uppercase;
+}
+.service-name-fr{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:13px;color:rgba(200,169,90,0.75);margin-bottom:8px;
+}
+.service-desc{font-size:13.5px;color:var(--muted);line-height:1.7;}
+
 /* ─── MOBILE ────────────────────────────────────────── */
 @media(max-width:768px){
   nav{padding:14px 20px;}
@@ -294,6 +361,12 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   .footer-cta{padding:64px 20px;}
   .nutrition-grid,.reviews-grid{grid-template-columns:1fr;}
   .about-photo{height:380px;}
+  .services{padding:64px 20px;}
+  .services-grid{grid-template-columns:1fr;gap:36px;}
+  .services-photo-wrap{max-width:420px;margin:0 auto;}
+  .service-item{padding:20px 22px;gap:16px;}
+  .service-icon{width:46px;height:46px;}
+  .service-icon svg{width:22px;height:22px;}
 }
 </style>
 </head>
@@ -310,12 +383,12 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
     <span class="nav-logo-text">AlphaWellness</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#how">How it works</a></li>
     <li><a href="#nutrition">Nutrition</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#booking">Book a call</a></li>
-    <li><a href="#faq">FAQ</a></li>
   </ul>
   <a href="#booking" class="nav-cta">Free discovery call</a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -332,10 +405,10 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
       <circle cx="40" cy="46" r="3" fill="#c8a95a"/>
     </svg>
   </div>
-  <p class="hero-eyebrow">Votre Transformation Commence Ici &middot; France &amp; remote worldwide</p>
-  <h1>Train smarter.<br><em>Live better.</em><br>In your language.</h1>
-  <p class="hero-sub">Bilingual online fitness and wellness coaching for expats and professionals across France. NASM &amp; ISSA certified. 8+ years of luxury resort and spa experience.</p>
-  <p class="hero-fr-tagline">L&rsquo;excellence &agrave; votre service &mdash; en France et au-del&agrave;</p>
+  <p class="hero-eyebrow">Total Wellness Coach &middot; Coach Bien-&Ecirc;tre Total &middot; France &amp; Remote</p>
+  <h1>Stronger. <em>Calmer.</em><br>Aligned. <em>You.</em></h1>
+  <p class="hero-sub">More than a personal trainer &mdash; a bilingual total wellness coach. Fitness, yoga, pilates, breathwork, and massage therapy, integrated into one complete programme for expats and high-performers across France.</p>
+  <p class="hero-fr-tagline">Fitness &middot; Yoga &middot; Pilates &middot; Breathwork &middot; Massage &mdash; un seul coach.</p>
   <div class="hero-actions">
     <a href="#booking" class="btn-primary">Book your free call</a>
     <a href="#how" class="btn-ghost">See how it works &rarr;</a>
@@ -357,6 +430,105 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   <div class="cred-item">Spa &amp; Wellness Practitioner</div>
   <div class="cred-item">CPR / AED Certified</div>
 </div>
+
+<!-- ─── SERVICES ──────────────────────────────────────── -->
+<section class="services" id="services">
+  <div class="services-intro">
+    <p class="section-eyebrow reveal">Une Approche Compl&egrave;te</p>
+    <h2 class="section-title reveal">More than a coach. <em>A total wellness coach.</em></h2>
+    <p class="services-sub reveal">Integrating fitness, mind, and body for lasting transformation. Stronger. Calmer. Aligned. <em>You.</em></p>
+  </div>
+  <div class="services-grid">
+    <div class="services-photo-wrap reveal">
+      <img src="images/alpha-wellness.jpg" alt="Alpha Amos &mdash; Total Wellness Coach" class="services-photo">
+      <div class="services-photo-tagline">One coach. Comprehensive care.</div>
+    </div>
+    <div class="services-list">
+
+      <div class="service-item reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="11" width="2.5" height="6"/>
+            <rect x="5" y="9" width="3" height="10"/>
+            <rect x="20" y="9" width="3" height="10"/>
+            <rect x="23.5" y="11" width="2.5" height="6"/>
+            <line x1="8" y1="14" x2="20" y2="14"/>
+          </svg>
+        </div>
+        <div class="service-text">
+          <div class="service-name">Fitness</div>
+          <div class="service-name-fr">Force &amp; Endurance</div>
+          <div class="service-desc">Build strength, endurance, and confidence through personalised training programmes that match your level, schedule, and lifestyle.</div>
+        </div>
+      </div>
+
+      <div class="service-item reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="6" r="2.2"/>
+            <path d="M14 8.5 v6"/>
+            <path d="M6 23 c0-4.5 3.5-8 8-8 s8 3.5 8 8"/>
+            <path d="M8.5 16 l-3.5 6"/>
+            <path d="M19.5 16 l3.5 6"/>
+          </svg>
+        </div>
+        <div class="service-text">
+          <div class="service-name">Yoga</div>
+          <div class="service-name-fr">&Eacute;quilibre &amp; Souplesse</div>
+          <div class="service-desc">Improve flexibility, balance, and inner peace with guided yoga sessions tailored for body and mind alignment.</div>
+        </div>
+      </div>
+
+      <div class="service-item reveal reveal-delay-2">
+        <div class="service-icon">
+          <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="7" cy="7" r="1.8"/>
+            <path d="M9 9 l4.5 4.5 l6-3.5"/>
+            <path d="M13.5 13.5 l0 7 l6 3.5"/>
+            <path d="M13.5 20.5 l-6 3.5"/>
+          </svg>
+        </div>
+        <div class="service-text">
+          <div class="service-name">Pilates</div>
+          <div class="service-name-fr">Contr&ocirc;le &amp; Posture</div>
+          <div class="service-desc">Strengthen, lengthen, and move with control. Build deep core stability and refined body awareness.</div>
+        </div>
+      </div>
+
+      <div class="service-item reveal reveal-delay-3">
+        <div class="service-icon">
+          <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 5 v10"/>
+            <path d="M14 15 c-4.5 0-8 2.5-8 7 c0 1.8 1.8 2.5 3 2 l0-7"/>
+            <path d="M14 15 c4.5 0 8 2.5 8 7 c0 1.8-1.8 2.5-3 2 l0-7"/>
+          </svg>
+        </div>
+        <div class="service-text">
+          <div class="service-name">Breathwork</div>
+          <div class="service-name-fr">Souffle &amp; Calme</div>
+          <div class="service-desc">Optimise breath, reduce stress, and elevate performance through structured breathwork practices.</div>
+        </div>
+      </div>
+
+      <div class="service-item reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 19 c0-3.5 2.5-6.5 6-6.5 l3 1 l3-1 c3.5 0 6 3 6 6.5 l0 3.5 l-18 0 z"/>
+            <path d="M9 12.5 l0-4.5"/>
+            <path d="M14 13.5 l0-6.5"/>
+            <path d="M19 12.5 l0-4.5"/>
+          </svg>
+        </div>
+        <div class="service-text">
+          <div class="service-name">Massage</div>
+          <div class="service-name-fr">D&eacute;tente &amp; R&eacute;cup&eacute;ration</div>
+          <div class="service-desc">Release tension, restore recovery, and support healing. Spa-trained methodology drawn from 8 years in luxury wellness environments.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ─── WHO I WORK WITH ───────────────────────────────── -->
 <section class="for-whom" id="who">
@@ -514,7 +686,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
 <!-- ─── ABOUT ──────────────────────────────────────────── -->
 <section class="about" id="about">
   <p class="section-eyebrow reveal">Votre Coach</p>
-  <h2 class="section-title reveal">Your English speaking <em>personal trainer</em> in France</h2>
+  <h2 class="section-title reveal">Your English speaking <em>total wellness coach</em> in France</h2>
   <div class="about-grid">
     <div class="about-photo-wrap reveal">
       <img src="images/alpha-portrait.jpg" class="about-photo" alt="Alpha Amos — English Speaking Personal Trainer France">
@@ -522,8 +694,8 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
     <div class="about-text reveal">
       <p>I&rsquo;m <strong>Alpha (Omega) Amos</strong> &mdash; a bilingual fitness and wellness coach based in France with over 8 years of experience working across luxury 5-star resorts, premium spa facilities, and high-end urban fitness clubs in Europe and internationally.</p>
       <p>My career has taken me from the <strong>LUX Grand Baie resort in Mauritius</strong> &mdash; where I ranked #1 in personal training sales for six consecutive months &mdash; to <strong>Fitness First and Gym Nation in Dubai</strong>, and back to France where I now coach clients online across the country and internationally.</p>
-      <p>My approach is holistic. I don&rsquo;t just write training plans. I build complete systems &mdash; combining <strong>high-performance training, practical nutrition, and the recovery rituals</strong> that most coaches never teach but every serious client needs.</p>
-      <p>I coach in both <strong>English and French</strong>. Whether you&rsquo;ve just arrived in France as an expat, or you&rsquo;ve been here for years and simply want a coach who communicates clearly &mdash; I&rsquo;m the trainer you&rsquo;ve been searching for.</p>
+      <p>My approach is holistic. I don&rsquo;t just write training plans &mdash; I build complete wellness systems combining <strong>fitness, yoga, pilates, breathwork, nutrition, and massage therapy</strong>. One coach. Comprehensive care. The recovery rituals and integrated wellness practices that most coaches never teach but every serious client needs.</p>
+      <p>I coach in both <strong>English and French</strong>. Whether you&rsquo;ve just arrived in France as an expat, or you&rsquo;ve been here for years and simply want a coach who communicates clearly and treats you as a whole person &mdash; I&rsquo;m the coach you&rsquo;ve been searching for.</p>
       <div class="certs-grid">
         <div class="cert-badge"><span>Certification</span>NASM</div>
         <div class="cert-badge"><span>Certification</span>ISSA</div>
@@ -698,10 +870,11 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
       </svg>
       <span class="footer-logo-name">AlphaWellness</span>
     </div>
-    <div class="footer-tagline">English speaking personal trainer and online wellness coach. Based in France. Coaching worldwide.</div>
-    <div class="footer-fr-tagline">Votre transformation, notre mission.</div>
+    <div class="footer-tagline">Total Wellness Coach. Fitness, yoga, pilates, breathwork &amp; massage. Bilingual EN/FR. Based in France &mdash; coaching worldwide.</div>
+    <div class="footer-fr-tagline">Fa&ccedil;onnez votre meilleur vous.</div>
   </div>
   <div class="footer-col">
+    <a href="#services">Services</a>
     <a href="#who">Who I work with</a>
     <a href="#how">How it works</a>
     <a href="#nutrition">Nutrition</a>
