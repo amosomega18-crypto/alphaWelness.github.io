@@ -13,12 +13,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--black:#0c0c0b;--dark:#141412;--surface:#1a1a18;--gold:#c8a95a;--gold-light:#e8d5a0;--white:#f5f2eb;--muted:#888880;--border:rgba(200,169,90,0.18);}
+/* ─── VARIABLES ─────────────────────────────────────── */
+:root{
+  --black:#0c0c0b;--dark:#141412;--surface:#1a1a18;
+  --gold:#c8a95a;--gold-light:#e8d5a0;
+  --white:#f5f2eb;--muted:#888880;
+  --border:rgba(200,169,90,0.18);
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--black);color:var(--white);font-family:'Jost',sans-serif;font-weight:300;font-size:16px;line-height:1.7;overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 48px;background:rgba(12,12,11,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
-.nav-logo{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);text-decoration:none;}
+
+/* ─── NAVIGATION ────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 48px;
+  background:rgba(12,12,11,0.96);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-mark{width:30px;height:auto;flex-shrink:0;}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold);letter-spacing:0.02em;}
 .nav-links{display:flex;gap:32px;list-style:none;}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;transition:color 0.2s;}
 .nav-links a:hover{color:var(--white);}
@@ -26,33 +43,97 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .nav-cta:hover{background:var(--gold);color:var(--black);}
 .hamburger{display:none;cursor:pointer;flex-direction:column;gap:5px;background:none;border:none;padding:0;}
 .hamburger span{display:block;width:22px;height:1px;background:var(--white);}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 48px 80px;}
+
+/* ─── HERO ──────────────────────────────────────────── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:140px 48px 80px;
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.80) 100%),
+    url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&w=1920&q=80');
+  background-size:cover;
+  background-position:center top;
+}
+.hero-logo-mark{margin-bottom:36px;}
+.hero-logo-mark svg{width:68px;height:auto;}
 .hero-eyebrow{font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(42px,7vw,86px);font-weight:400;line-height:1.08;max-width:820px;margin-bottom:32px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(42px,7vw,86px);font-weight:400;line-height:1.08;max-width:820px;margin-bottom:28px;}
 .hero h1 em{font-style:italic;color:var(--gold);}
-.hero-sub{font-size:16px;color:var(--muted);max-width:500px;line-height:1.85;margin-bottom:48px;}
+.hero-sub{font-size:16px;color:var(--muted);max-width:500px;line-height:1.85;margin-bottom:14px;}
+.hero-fr-tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:rgba(200,169,90,0.75);margin-bottom:40px;letter-spacing:0.03em;}
 .hero-actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
-.btn-primary{background:var(--gold);color:var(--black);font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:18px 40px;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.2s;}
+.btn-primary{background:var(--gold);color:var(--black);font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:18px 40px;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.25s;}
 .btn-primary:hover{background:var(--gold-light);}
 .btn-ghost{color:var(--muted);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;transition:color 0.2s;}
 .btn-ghost:hover{color:var(--white);}
 .hero-stats{display:flex;gap:52px;margin-top:72px;padding-top:40px;border-top:1px solid var(--border);flex-wrap:wrap;}
 .stat-num{font-family:'Playfair Display',serif;font-size:36px;color:var(--gold);line-height:1;margin-bottom:6px;}
 .stat-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);}
-.cred-bar{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:26px 48px;display:flex;justify-content:center;align-items:center;gap:36px;flex-wrap:wrap;}
+
+/* ─── HERO ENTRANCE ANIMATIONS ──────────────────────── */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(32px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.hero-logo-mark{animation:fadeInUp 0.9s ease 0s both;}
+.hero-eyebrow{animation:fadeInUp 0.8s ease 0.3s both;}
+.hero h1{animation:fadeInUp 0.9s ease 0.55s both;}
+.hero-sub{animation:fadeInUp 0.8s ease 0.78s both;}
+.hero-fr-tagline{animation:fadeInUp 0.8s ease 0.92s both;}
+.hero-actions{animation:fadeInUp 0.8s ease 1.08s both;}
+.hero-stats{animation:fadeInUp 0.8s ease 1.25s both;}
+
+/* ─── SCROLL REVEAL ─────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:0.1s;}
+.reveal-delay-2{transition-delay:0.2s;}
+.reveal-delay-3{transition-delay:0.3s;}
+
+/* ─── CREDENTIALS BAR ───────────────────────────────── */
+.cred-bar{
+  background:rgba(20,20,18,0.88);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:26px 48px;
+  display:flex;justify-content:center;align-items:center;gap:36px;flex-wrap:wrap;
+}
 .cred-item{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px;}
 .cred-item::before{content:'';display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--gold);}
-section{padding:96px 48px;}
+
+/* ─── SECTIONS SHARED ───────────────────────────────── */
+section{padding:96px 48px;position:relative;}
 .section-eyebrow{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
 .section-title{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,50px);font-weight:400;line-height:1.15;margin-bottom:24px;}
 .section-title em{font-style:italic;color:var(--gold);}
-.for-whom{background:var(--dark);}
+
+/* ─── FOR WHOM ──────────────────────────────────────── */
+.for-whom{
+  background-image:
+    linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.83)),
+    url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&w=1920&q=80');
+  background-size:cover;background-position:center;
+}
 .for-whom-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--border);margin-top:52px;}
-.for-card{background:var(--dark);padding:36px 32px;transition:background 0.2s;}
-.for-card:hover{background:var(--surface);}
-.for-card-num{font-family:'Playfair Display',serif;font-size:44px;color:rgba(200,169,90,0.12);line-height:1;margin-bottom:16px;}
+.for-card{
+  background:rgba(12,12,11,0.52);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(200,169,90,0.12);
+  padding:36px 32px;transition:background 0.3s,border-color 0.3s;
+}
+.for-card:hover{background:rgba(20,20,18,0.72);border-color:rgba(200,169,90,0.28);}
+.for-card-num{font-family:'Playfair Display',serif;font-size:44px;color:rgba(200,169,90,0.13);line-height:1;margin-bottom:16px;}
 .for-card-title{font-size:16px;font-weight:500;margin-bottom:10px;}
 .for-card-body{font-size:14px;color:var(--muted);line-height:1.75;}
+
+/* ─── HOW IT WORKS ──────────────────────────────────── */
+#how{
+  background-image:
+    linear-gradient(rgba(0,0,0,0.78),rgba(0,0,0,0.83)),
+    url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&w=1920&q=80');
+  background-size:cover;background-position:center;
+}
 .how-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:52px;}
 .steps{display:flex;flex-direction:column;}
 .step{display:flex;gap:24px;padding:28px 0;border-bottom:1px solid var(--border);}
@@ -60,7 +141,12 @@ section{padding:96px 48px;}
 .step-num{font-family:'Playfair Display',serif;font-size:13px;color:var(--gold);min-width:26px;padding-top:3px;}
 .step-title{font-size:15px;font-weight:500;margin-bottom:8px;}
 .step-body{font-size:14px;color:var(--muted);line-height:1.75;}
-.how-callout{background:var(--surface);border:1px solid var(--border);padding:44px 36px;position:sticky;top:90px;}
+.how-callout{
+  background:rgba(12,12,11,0.60);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--border);
+  padding:44px 36px;position:sticky;top:90px;
+}
 .callout-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
 .callout-quote{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;line-height:1.5;margin-bottom:28px;}
 .callout-includes{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
@@ -68,51 +154,22 @@ section{padding:96px 48px;}
 .callout-includes li::before{content:'→';color:var(--gold);flex-shrink:0;}
 .callout-price{font-family:'Playfair Display',serif;font-size:38px;color:var(--gold);margin-bottom:4px;}
 .callout-price span{font-family:'Jost',sans-serif;font-size:14px;color:var(--muted);}
-.about{background:var(--dark);}
-.about-grid{display:grid;grid-template-columns:360px 1fr 1fr;gap:48px;align-items:start;margin-top:52px;}
-.about-text p{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:18px;}
-.about-text p strong{color:var(--white);font-weight:500;}
-.certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:32px;}
-.cert-badge{background:var(--surface);border:1px solid var(--border);padding:14px 16px;font-size:13px;color:var(--gold-light);}
-.cert-badge span{display:block;font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px;}
-.about-numbers{display:flex;flex-direction:column;gap:1px;background:var(--border);}
-.about-num-card{background:var(--dark);padding:32px 28px;transition:background 0.2s;}
-.about-num-card:hover{background:var(--surface);}
-.about-big-num{font-family:'Playfair Display',serif;font-size:48px;color:var(--gold);line-height:1;margin-bottom:8px;}
-.about-num-label{font-size:13px;color:var(--muted);line-height:1.5;}
-.booking{background:var(--surface);}
-.booking-inner{max-width:860px;margin:0 auto;text-align:center;}
-.booking-sub{font-size:15px;color:var(--muted);max-width:500px;margin:0 auto 48px;line-height:1.8;}
-.booking-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-bottom:28px;text-align:left;}
-.booking-step{background:var(--dark);padding:24px 22px;}
-.booking-step-num{font-family:'Playfair Display',serif;font-size:30px;color:var(--gold);line-height:1;margin-bottom:10px;}
-.booking-step-title{font-size:14px;font-weight:500;margin-bottom:6px;}
-.booking-step-body{font-size:12px;color:var(--muted);line-height:1.65;}
-.cal-wrap{background:#ffffff;border:1px solid var(--border);overflow:hidden;margin-bottom:16px;}
-.booking-note{font-size:12px;color:var(--muted);}
-.booking-note a{color:var(--gold);text-decoration:none;}
-.faq{background:var(--black);}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:52px;}
-.faq-item{background:var(--black);padding:32px 28px;transition:background 0.2s;}
-.faq-item:hover{background:var(--surface);}
-.faq-q{font-size:15px;font-weight:500;margin-bottom:10px;line-height:1.4;}
-.faq-a{font-size:14px;color:var(--muted);line-height:1.75;}
-.footer-cta{background:var(--surface);padding:80px 48px;text-align:center;border-top:1px solid var(--border);}
-footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;}
-.footer-brand{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);margin-bottom:10px;}
-.footer-tagline{font-size:13px;color:var(--muted);max-width:260px;line-height:1.6;}
-.footer-col{display:flex;flex-direction:column;gap:10px;}
-.footer-col a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
-.footer-col a:hover{color:var(--white);}
-.footer-legal{width:100%;padding-top:28px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
-/* About photo */
-.about-photo-wrap{overflow:hidden;}
-.about-photo{width:100%;height:520px;object-fit:cover;object-position:top center;display:block;}
-/* Nutrition */
-.nutrition{background:var(--surface);}
+
+/* ─── NUTRITION ─────────────────────────────────────── */
+.nutrition{
+  background-image:
+    linear-gradient(rgba(0,0,0,0.78),rgba(0,0,0,0.82)),
+    url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&w=1920&q=80');
+  background-size:cover;background-position:center;
+}
 .nutrition-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:52px;}
-.meal-card{background:var(--dark);overflow:hidden;transition:background 0.2s;}
-.meal-card:hover{background:var(--surface);}
+.meal-card{
+  background:rgba(12,12,11,0.55);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(200,169,90,0.10);
+  overflow:hidden;transition:background 0.3s,border-color 0.3s;
+}
+.meal-card:hover{background:rgba(20,20,18,0.72);border-color:rgba(200,169,90,0.25);}
 .meal-img{width:100%;height:220px;object-fit:cover;display:block;}
 .meal-body{padding:24px 22px;}
 .meal-name{font-size:15px;font-weight:500;margin-bottom:16px;}
@@ -124,17 +181,104 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
 .macro-item{text-align:center;}
 .macro-num{font-size:14px;font-weight:500;color:var(--white);}
 .macro-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
-/* Reviews */
-.reviews{background:var(--dark);}
+
+/* ─── ABOUT ─────────────────────────────────────────── */
+.about{
+  background-image:
+    linear-gradient(rgba(14,14,12,0.90),rgba(14,14,12,0.93)),
+    url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&w=1920&q=80');
+  background-size:cover;background-position:center;
+}
+.about-grid{display:grid;grid-template-columns:360px 1fr 1fr;gap:48px;align-items:start;margin-top:52px;}
+.about-text p{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:18px;}
+.about-text p strong{color:var(--white);font-weight:500;}
+.certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:32px;}
+.cert-badge{
+  background:rgba(26,26,24,0.72);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  border:1px solid var(--border);padding:14px 16px;font-size:13px;color:var(--gold-light);
+}
+.cert-badge span{display:block;font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px;}
+.about-numbers{display:flex;flex-direction:column;gap:1px;background:var(--border);}
+.about-num-card{
+  background:rgba(20,20,18,0.72);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  padding:32px 28px;transition:background 0.2s;
+}
+.about-num-card:hover{background:rgba(26,26,24,0.88);}
+.about-big-num{font-family:'Playfair Display',serif;font-size:48px;color:var(--gold);line-height:1;margin-bottom:8px;}
+.about-num-label{font-size:13px;color:var(--muted);line-height:1.5;}
+.about-photo-wrap{overflow:hidden;}
+.about-photo{width:100%;height:520px;object-fit:cover;object-position:top center;display:block;}
+
+/* ─── BOOKING ───────────────────────────────────────── */
+.booking{
+  background-image:
+    linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.86)),
+    url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&w=1920&q=80');
+  background-size:cover;background-position:center;
+}
+.booking-inner{max-width:860px;margin:0 auto;text-align:center;}
+.booking-sub{font-size:15px;color:var(--muted);max-width:500px;margin:0 auto 48px;line-height:1.8;}
+
+/* ─── FAQ ───────────────────────────────────────────── */
+.faq{background:var(--black);}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:52px;}
+.faq-item{background:var(--black);padding:32px 28px;transition:background 0.2s;}
+.faq-item:hover{background:var(--surface);}
+.faq-q{font-size:15px;font-weight:500;margin-bottom:10px;line-height:1.4;}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.75;}
+
+/* ─── REVIEWS ───────────────────────────────────────── */
+.reviews{
+  background-image:
+    linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.84)),
+    url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&w=1920&q=80');
+  background-size:cover;background-position:center;
+}
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:52px;}
-.review-card{background:var(--dark);padding:36px 28px;transition:background 0.2s;}
-.review-card:hover{background:var(--surface);}
+.review-card{
+  background:rgba(12,12,11,0.52);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(200,169,90,0.10);
+  padding:36px 28px;transition:background 0.3s,border-color 0.3s;
+}
+.review-card:hover{background:rgba(20,20,18,0.72);border-color:rgba(200,169,90,0.25);}
 .stars{color:var(--gold);font-size:15px;letter-spacing:3px;margin-bottom:16px;}
 .review-text{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:20px;font-style:italic;}
 .review-author{font-size:13px;font-weight:500;color:var(--white);}
 .review-meta{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:0.1em;text-transform:uppercase;}
+
+/* ─── FOOTER CTA ────────────────────────────────────── */
+.footer-cta{
+  background-image:
+    linear-gradient(rgba(0,0,0,0.78),rgba(0,0,0,0.84)),
+    url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&w=1920&q=80');
+  background-size:cover;background-position:center;
+  padding:96px 48px;text-align:center;
+  border-top:1px solid var(--border);
+}
+.footer-cta-fr{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:14px;color:rgba(200,169,90,0.65);
+  margin-top:20px;letter-spacing:0.04em;
+}
+
+/* ─── FOOTER ────────────────────────────────────────── */
+footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;}
+.footer-logo-wrap{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.footer-logo-mark{width:40px;height:auto;}
+.footer-logo-name{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);}
+.footer-tagline{font-size:13px;color:var(--muted);max-width:260px;line-height:1.6;}
+.footer-fr-tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:12px;color:rgba(200,169,90,0.60);margin-top:8px;}
+.footer-col{display:flex;flex-direction:column;gap:10px;}
+.footer-col a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-col a:hover{color:var(--white);}
+.footer-legal{width:100%;padding-top:28px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+/* ─── MOBILE ────────────────────────────────────────── */
 @media(max-width:768px){
-  nav{padding:16px 20px;}
+  nav{padding:14px 20px;}
   .nav-links{display:none;}
   .hamburger{display:flex;}
   .hero{padding:110px 20px 60px;}
@@ -145,10 +289,9 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   .how-callout{position:static;}
   .certs-grid{grid-template-columns:1fr;}
   .faq-grid{grid-template-columns:1fr;}
-  .booking-steps{grid-template-columns:1fr;}
   .booking-two-path{grid-template-columns:1fr!important;}
   footer{padding:36px 20px;}
-  .footer-cta{padding:60px 20px;}
+  .footer-cta{padding:64px 20px;}
   .nutrition-grid,.reviews-grid{grid-template-columns:1fr;}
   .about-photo{height:380px;}
 }
@@ -156,8 +299,16 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
 </head>
 <body>
 
+<!-- ─── NAV ──────────────────────────────────────────── -->
 <nav>
-  <a href="#" class="nav-logo">AlphaWellness</a>
+  <a href="#" class="nav-logo">
+    <svg class="nav-logo-mark" viewBox="0 0 80 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 3 L2 72 L78 72 Z" stroke="#c8a95a" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+      <path d="M40 22 L16 68 L64 68 Z" stroke="#c8a95a" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
+      <circle cx="40" cy="46" r="3.5" fill="#c8a95a"/>
+    </svg>
+    <span class="nav-logo-text">AlphaWellness</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#how">How it works</a></li>
@@ -172,10 +323,19 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   </button>
 </nav>
 
+<!-- ─── HERO ──────────────────────────────────────────── -->
 <section class="hero">
-  <p class="hero-eyebrow">English speaking personal trainer &middot; France &amp; remote worldwide</p>
+  <div class="hero-logo-mark">
+    <svg viewBox="0 0 80 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 3 L2 72 L78 72 Z" stroke="#c8a95a" stroke-width="2" stroke-linejoin="round" fill="none"/>
+      <path d="M40 22 L16 68 L64 68 Z" stroke="#c8a95a" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
+      <circle cx="40" cy="46" r="3" fill="#c8a95a"/>
+    </svg>
+  </div>
+  <p class="hero-eyebrow">Votre Transformation Commence Ici &middot; France &amp; remote worldwide</p>
   <h1>Train smarter.<br><em>Live better.</em><br>In your language.</h1>
   <p class="hero-sub">Bilingual online fitness and wellness coaching for expats and professionals across France. NASM &amp; ISSA certified. 8+ years of luxury resort and spa experience.</p>
+  <p class="hero-fr-tagline">L&rsquo;excellence &agrave; votre service &mdash; en France et au-del&agrave;</p>
   <div class="hero-actions">
     <a href="#booking" class="btn-primary">Book your free call</a>
     <a href="#how" class="btn-ghost">See how it works &rarr;</a>
@@ -188,76 +348,79 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   </div>
 </section>
 
+<!-- ─── CREDENTIALS BAR ───────────────────────────────── -->
 <div class="cred-bar">
   <div class="cred-item">NASM Certified</div>
   <div class="cred-item">ISSA Certified</div>
   <div class="cred-item">EREPS / CQP Levels 3 &amp; 4</div>
-  <div class="cred-item">Carte Pro d'&Eacute;ducateur Sportif</div>
+  <div class="cred-item">Carte Pro d&rsquo;&Eacute;ducateur Sportif</div>
   <div class="cred-item">Spa &amp; Wellness Practitioner</div>
   <div class="cred-item">CPR / AED Certified</div>
 </div>
 
+<!-- ─── WHO I WORK WITH ───────────────────────────────── -->
 <section class="for-whom" id="who">
-  <p class="section-eyebrow">Who I work with</p>
-  <h2 class="section-title">Built for people who are <em>serious</em> about results</h2>
+  <p class="section-eyebrow reveal">Pour Qui</p>
+  <h2 class="section-title reveal">Built for people who are <em>serious</em> about results</h2>
   <div class="for-whom-grid">
-    <div class="for-card">
+    <div class="for-card reveal">
       <div class="for-card-num">01</div>
       <div class="for-card-title">Expats in France</div>
-      <div class="for-card-body">You've relocated to France and want a fitness coach who speaks your language, understands your lifestyle, and delivers real results &mdash; not a generic gym plan.</div>
+      <div class="for-card-body">You&rsquo;ve relocated to France and want a fitness coach who speaks your language, understands your lifestyle, and delivers real results &mdash; not a generic gym plan.</div>
     </div>
-    <div class="for-card">
+    <div class="for-card reveal reveal-delay-1">
       <div class="for-card-num">02</div>
       <div class="for-card-title">Busy professionals 30&ndash;50</div>
       <div class="for-card-body">You have a demanding career, limited time, and high standards. You want a programme that works around your schedule &mdash; not the other way around.</div>
     </div>
-    <div class="for-card">
+    <div class="for-card reveal reveal-delay-2">
       <div class="for-card-num">03</div>
       <div class="for-card-title">High-performers &amp; executives</div>
-      <div class="for-card-body">You optimise everything else in your life. Now it's time to optimise your body and energy. Performance-focused training with a holistic wellness approach.</div>
+      <div class="for-card-body">You optimise everything else in your life. Now it&rsquo;s time to optimise your body and energy. Performance-focused training with a holistic wellness approach.</div>
     </div>
-    <div class="for-card">
+    <div class="for-card reveal reveal-delay-3">
       <div class="for-card-num">04</div>
       <div class="for-card-title">English speakers across France</div>
-      <div class="for-card-body">Whether you're in Paris, the South of France, or anywhere in between &mdash; fully online, fully bilingual coaching that goes wherever you go.</div>
+      <div class="for-card-body">Whether you&rsquo;re in Paris, the South of France, or anywhere in between &mdash; fully online, fully bilingual coaching that goes wherever you go.</div>
     </div>
   </div>
 </section>
 
+<!-- ─── HOW IT WORKS ──────────────────────────────────── -->
 <section id="how">
-  <p class="section-eyebrow">How it works</p>
-  <h2 class="section-title">A complete wellness programme, <em>designed around you</em></h2>
+  <p class="section-eyebrow reveal">Votre Parcours</p>
+  <h2 class="section-title reveal">A complete wellness programme, <em>designed around you</em></h2>
   <div class="how-grid">
     <div class="steps">
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">01</div>
         <div>
           <div class="step-title">Free discovery call</div>
-          <div class="step-body">We start with a 30-minute conversation. I learn about your goals, your lifestyle, what you've tried before, and what's been in the way. No pitch, no pressure &mdash; just a real conversation.</div>
+          <div class="step-body">We start with a 30-minute conversation. I learn about your goals, your lifestyle, what you&rsquo;ve tried before, and what&rsquo;s been in the way. No pitch, no pressure &mdash; just a real conversation.</div>
         </div>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">02</div>
         <div>
           <div class="step-title">Your personalised programme</div>
           <div class="step-body">I build a training plan specifically for you &mdash; your schedule, your equipment, your level. Updated every 4 weeks based on your progress.</div>
         </div>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">03</div>
         <div>
           <div class="step-title">Nutrition &amp; recovery guidance</div>
           <div class="step-body">Not a rigid meal plan &mdash; a practical framework that fits your life. Combined with recovery rituals drawn from 8 years working in luxury 5-star spa environments.</div>
         </div>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">04</div>
         <div>
           <div class="step-title">Weekly check-ins &amp; real support</div>
-          <div class="step-body">WhatsApp access, weekly video check-ins, and programme adjustments in real time. You're never training alone.</div>
+          <div class="step-body">WhatsApp access, weekly video check-ins, and programme adjustments in real time. You&rsquo;re never training alone.</div>
         </div>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">05</div>
         <div>
           <div class="step-title">Track everything in one app</div>
@@ -265,9 +428,9 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
         </div>
       </div>
     </div>
-    <div class="how-callout">
-      <div class="callout-label">What's included</div>
-      <p class="callout-quote">"Not just a training plan. A complete system for the person you want to become."</p>
+    <div class="how-callout reveal">
+      <div class="callout-label">Ce qui est inclus</div>
+      <p class="callout-quote">&ldquo;Not just a training plan. A complete system for the person you want to become.&rdquo;</p>
       <ul class="callout-includes">
         <li>Personalised training programme updated every 4 weeks</li>
         <li>Nutrition framework tailored to your lifestyle</li>
@@ -284,13 +447,13 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   </div>
 </section>
 
+<!-- ─── NUTRITION ─────────────────────────────────────── -->
 <section class="nutrition" id="nutrition">
-  <p class="section-eyebrow">Nutrition</p>
-  <h2 class="section-title">Fuel your body <em>the right way</em></h2>
-  <p style="font-size:15px;color:var(--muted);max-width:580px;line-height:1.85;">Real food. Real results. Every nutrition framework is built around your goals and your lifestyle &mdash; no crash diets, no rigid meal plans.</p>
+  <p class="section-eyebrow reveal">Nutrition &amp; Bien-&ecirc;tre</p>
+  <h2 class="section-title reveal">Fuel your body <em>the right way</em></h2>
+  <p class="reveal" style="font-size:15px;color:var(--muted);max-width:580px;line-height:1.85;">Real food. Real results. Every nutrition framework is built around your goals and your lifestyle &mdash; no crash diets, no rigid meal plans.</p>
   <div class="nutrition-grid">
-
-    <div class="meal-card">
+    <div class="meal-card reveal">
       <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&w=600&q=80" alt="High Protein Chicken Bowl" class="meal-img">
       <div class="meal-body">
         <div class="meal-name">High Protein Chicken Bowl</div>
@@ -307,8 +470,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
         </div>
       </div>
     </div>
-
-    <div class="meal-card">
+    <div class="meal-card reveal reveal-delay-1">
       <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&w=600&q=80" alt="Salmon & Avocado Plate" class="meal-img">
       <div class="meal-body">
         <div class="meal-name">Salmon &amp; Avocado Plate</div>
@@ -325,8 +487,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
         </div>
       </div>
     </div>
-
-    <div class="meal-card">
+    <div class="meal-card reveal reveal-delay-2">
       <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&w=600&q=80" alt="Clean Breakfast Bowl" class="meal-img">
       <div class="meal-body">
         <div class="meal-name">Clean Breakfast Bowl</div>
@@ -343,26 +504,26 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
         </div>
       </div>
     </div>
-
   </div>
   <div style="text-align:center;margin-top:48px;">
-    <p style="font-size:14px;color:var(--muted);margin-bottom:24px;">Nutrition coaching is included in every programme &mdash; tailored to your goals, not a generic plan.</p>
-    <a href="#booking" class="btn-primary">Get your nutrition plan</a>
+    <p class="reveal" style="font-size:14px;color:var(--muted);margin-bottom:24px;">Nutrition coaching is included in every programme &mdash; tailored to your goals, not a generic plan.</p>
+    <a href="#booking" class="btn-primary reveal">Get your nutrition plan</a>
   </div>
 </section>
 
+<!-- ─── ABOUT ──────────────────────────────────────────── -->
 <section class="about" id="about">
-  <p class="section-eyebrow">About Alpha</p>
-  <h2 class="section-title">Your English speaking <em>personal trainer</em> in France</h2>
+  <p class="section-eyebrow reveal">Votre Coach</p>
+  <h2 class="section-title reveal">Your English speaking <em>personal trainer</em> in France</h2>
   <div class="about-grid">
-    <div class="about-photo-wrap">
+    <div class="about-photo-wrap reveal">
       <img src="images/alpha-portrait.jpg" class="about-photo" alt="Alpha Amos — English Speaking Personal Trainer France">
     </div>
-    <div class="about-text">
-      <p>I'm <strong>Alpha (Omega) Amos</strong> &mdash; a bilingual fitness and wellness coach based in France with over 8 years of experience working across luxury 5-star resorts, premium spa facilities, and high-end urban fitness clubs in Europe and internationally.</p>
+    <div class="about-text reveal">
+      <p>I&rsquo;m <strong>Alpha (Omega) Amos</strong> &mdash; a bilingual fitness and wellness coach based in France with over 8 years of experience working across luxury 5-star resorts, premium spa facilities, and high-end urban fitness clubs in Europe and internationally.</p>
       <p>My career has taken me from the <strong>LUX Grand Baie resort in Mauritius</strong> &mdash; where I ranked #1 in personal training sales for six consecutive months &mdash; to <strong>Fitness First and Gym Nation in Dubai</strong>, and back to France where I now coach clients online across the country and internationally.</p>
-      <p>My approach is holistic. I don't just write training plans. I build complete systems &mdash; combining <strong>high-performance training, practical nutrition, and the recovery rituals</strong> that most coaches never teach but every serious client needs.</p>
-      <p>I coach in both <strong>English and French</strong>. Whether you've just arrived in France as an expat, or you've been here for years and simply want a coach who communicates clearly &mdash; I'm the trainer you've been searching for.</p>
+      <p>My approach is holistic. I don&rsquo;t just write training plans. I build complete systems &mdash; combining <strong>high-performance training, practical nutrition, and the recovery rituals</strong> that most coaches never teach but every serious client needs.</p>
+      <p>I coach in both <strong>English and French</strong>. Whether you&rsquo;ve just arrived in France as an expat, or you&rsquo;ve been here for years and simply want a coach who communicates clearly &mdash; I&rsquo;m the trainer you&rsquo;ve been searching for.</p>
       <div class="certs-grid">
         <div class="cert-badge"><span>Certification</span>NASM</div>
         <div class="cert-badge"><span>Certification</span>ISSA</div>
@@ -372,7 +533,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
         <div class="cert-badge"><span>Certified</span>CPR / AED</div>
       </div>
     </div>
-    <div class="about-numbers">
+    <div class="about-numbers reveal">
       <div class="about-num-card">
         <div class="about-big-num">8+</div>
         <div class="about-num-label">Years coaching in luxury 5-star resorts, premium spas, and high-end fitness clubs</div>
@@ -393,34 +554,27 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   </div>
 </section>
 
+<!-- ─── BOOKING ───────────────────────────────────────── -->
 <section class="booking" id="booking">
   <div class="booking-inner">
-    <p class="section-eyebrow">Start today</p>
-    <h2 class="section-title">Two ways to <em>get started</em></h2>
-    <p class="booking-sub">Not sure yet? Book a free call. Ready to go? Sign up directly and get your programme today.</p>
+    <p class="section-eyebrow reveal">R&eacute;servez Votre Appel</p>
+    <h2 class="section-title reveal">Two ways to <em>get started</em></h2>
+    <p class="booking-sub reveal">Not sure yet? Book a free call. Ready to go? Sign up directly and get your programme today.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:16px;">
+    <div class="booking-two-path reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:16px;">
 
       <!-- PATH 1 — DISCOVERY CALL -->
-      <div style="background:var(--dark);padding:48px 40px;display:flex;flex-direction:column;gap:24px;">
+      <div style="background:rgba(20,20,18,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:48px 40px;display:flex;flex-direction:column;gap:24px;border:1px solid rgba(200,169,90,0.12);">
         <div>
-          <div style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Path 1 &mdash; Not sure yet?</div>
+          <div style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Chemin 1 &mdash; Pas encore s&ucirc;r ?</div>
           <div style="font-family:'Playfair Display',serif;font-size:26px;color:var(--white);line-height:1.2;margin-bottom:14px;">Book a free<br><em style="color:var(--gold);">discovery call</em></div>
-          <p style="font-size:14px;color:var(--muted);line-height:1.8;">We talk for 30 minutes. You tell me your goals, I'll tell you exactly how I can help. No commitment, no pressure &mdash; just a real conversation in English or French.</p>
+          <p style="font-size:14px;color:var(--muted);line-height:1.8;">We talk for 30 minutes. You tell me your goals, I&rsquo;ll tell you exactly how I can help. No commitment, no pressure &mdash; just a real conversation in English or French.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
-            <span style="color:var(--gold);">→</span> 30 minutes &middot; completely free
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
-            <span style="color:var(--gold);">→</span> English or French &mdash; your choice
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
-            <span style="color:var(--gold);">→</span> No obligation whatsoever
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
-            <span style="color:var(--gold);">→</span> Pick any available time slot
-          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);"><span style="color:var(--gold);">→</span> 30 minutes &middot; completely free</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);"><span style="color:var(--gold);">→</span> English or French &mdash; your choice</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);"><span style="color:var(--gold);">→</span> No obligation whatsoever</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);"><span style="color:var(--gold);">→</span> Pick any available time slot</div>
         </div>
         <div>
           <a href="https://calendar.app.google/SeMUbxCouqWiTRa26" target="_blank" rel="noopener" style="background:none;border:1px solid var(--gold);color:var(--gold);font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;padding:16px 32px;text-decoration:none;display:inline-block;transition:all 0.2s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--black)';" onmouseout="this.style.background='none';this.style.color='var(--gold)';">
@@ -431,28 +585,20 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
       </div>
 
       <!-- PATH 2 — SIGN UP DIRECTLY -->
-      <div style="background:var(--surface);padding:48px 40px;display:flex;flex-direction:column;gap:24px;position:relative;border:1px solid rgba(200,169,90,0.35);">
+      <div style="background:rgba(26,26,24,0.80);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:48px 40px;display:flex;flex-direction:column;gap:24px;position:relative;border:1px solid rgba(200,169,90,0.35);">
         <div style="position:absolute;top:0;left:0;right:0;background:var(--gold);padding:8px;text-align:center;">
           <span style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--black);font-weight:500;">Ready to commit &mdash; most popular</span>
         </div>
         <div style="margin-top:24px;">
-          <div style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Path 2 &mdash; Ready to go?</div>
+          <div style="font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Chemin 2 &mdash; Pr&ecirc;t &agrave; commencer ?</div>
           <div style="font-family:'Playfair Display',serif;font-size:26px;color:var(--white);line-height:1.2;margin-bottom:14px;">Sign up &amp; get your<br><em style="color:var(--gold);">programme today</em></div>
           <p style="font-size:14px;color:var(--muted);line-height:1.8;">Skip the call &mdash; sign up directly on the Everfit app, complete your onboarding, and receive your fully personalised programme within 24 hours.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
-            <span style="color:var(--gold);">→</span> Personalised training programme from day 1
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
-            <span style="color:var(--gold);">→</span> Nutrition framework + recovery protocols
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
-            <span style="color:var(--gold);">→</span> Weekly check-ins + WhatsApp support
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);">
-            <span style="color:var(--gold);">→</span> Starting from &euro;300/month
-          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);"><span style="color:var(--gold);">→</span> Personalised training programme from day 1</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);"><span style="color:var(--gold);">→</span> Nutrition framework + recovery protocols</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);"><span style="color:var(--gold);">→</span> Weekly check-ins + WhatsApp support</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);"><span style="color:var(--gold);">→</span> Starting from &euro;300/month</div>
         </div>
         <div>
           <a href="https://invite.everfit.io/6FS4A74HUD" target="_blank" rel="noopener" class="btn-primary" style="font-size:11px;padding:16px 32px;letter-spacing:0.22em;">
@@ -464,87 +610,96 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
 
     </div>
 
-    <p class="booking-note" style="text-align:center;padding-top:8px;">
+    <p class="booking-note reveal" style="text-align:center;padding-top:8px;font-size:12px;color:var(--muted);">
       Not sure which path to take? &nbsp;
-      <a href="https://calendar.app.google/SeMUbxCouqWiTRa26" target="_blank" rel="noopener">Start with the free call &rarr;</a>
+      <a href="https://calendar.app.google/SeMUbxCouqWiTRa26" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">Start with the free call &rarr;</a>
     </p>
   </div>
 </section>
 
+<!-- ─── FAQ ───────────────────────────────────────────── -->
 <section class="faq" id="faq">
-  <p class="section-eyebrow">Questions</p>
-  <h2 class="section-title">Everything you need <em>to know</em></h2>
+  <p class="section-eyebrow reveal">Questions Fr&eacute;quentes</p>
+  <h2 class="section-title reveal">Everything you need <em>to know</em></h2>
   <div class="faq-grid">
-    <div class="faq-item">
+    <div class="faq-item reveal">
       <div class="faq-q">Do you coach in English or French?</div>
-      <div class="faq-a">Both. I'm a fully bilingual coach &mdash; fluent in English and French. You choose your preferred language and I adapt entirely. Many of my clients are English-speaking expats in France who simply want a trainer they can communicate with clearly.</div>
+      <div class="faq-a">Both. I&rsquo;m a fully bilingual coach &mdash; fluent in English and French. You choose your preferred language and I adapt entirely. Many of my clients are English-speaking expats in France who simply want a trainer they can communicate with clearly.</div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item reveal reveal-delay-1">
       <div class="faq-q">How does online coaching work?</div>
       <div class="faq-a">Your programme lives in the Everfit app on your phone or laptop. Each week you receive your workouts with video demonstrations, track your progress, and communicate with me directly in the app. We also do a weekly video check-in to review your progress.</div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item reveal">
       <div class="faq-q">Do I need gym equipment?</div>
-      <div class="faq-a">No. I build programmes around what you have access to &mdash; whether that's a fully equipped gym, a set of dumbbells at home, or just your bodyweight. The programme adapts to your situation, not the other way around.</div>
+      <div class="faq-a">No. I build programmes around what you have access to &mdash; whether that&rsquo;s a fully equipped gym, a set of dumbbells at home, or just your bodyweight. The programme adapts to your situation, not the other way around.</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">I'm based outside of Paris &mdash; does that matter?</div>
+    <div class="faq-item reveal reveal-delay-1">
+      <div class="faq-q">I&rsquo;m based outside of Paris &mdash; does that matter?</div>
       <div class="faq-a">Not at all. My coaching is 100% online, so it works wherever you are in France or internationally. I have clients in Paris, the South of France, and across Europe &mdash; all coached remotely via the app and video calls.</div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item reveal">
       <div class="faq-q">What makes you different from a fitness app?</div>
       <div class="faq-a">A fitness app gives you a generic plan and zero accountability. I give you a fully personalised programme that evolves every 4 weeks, direct access to me when you need support, and holistic coaching &mdash; training, nutrition, and recovery &mdash; that creates lasting change.</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">What's the minimum commitment?</div>
+    <div class="faq-item reveal reveal-delay-1">
+      <div class="faq-q">What&rsquo;s the minimum commitment?</div>
       <div class="faq-a">Monthly programmes starting at &euro;300/month. I recommend a minimum of 3 months to see real transformation. We discuss everything on the free discovery call &mdash; no pressure, no obligation.</div>
     </div>
   </div>
 </section>
 
+<!-- ─── REVIEWS ───────────────────────────────────────── -->
 <section class="reviews" id="reviews">
-  <p class="section-eyebrow">Client reviews</p>
-  <h2 class="section-title">What clients <em>are saying</em></h2>
+  <p class="section-eyebrow reveal">Ils T&eacute;moignent</p>
+  <h2 class="section-title reveal">What clients <em>are saying</em></h2>
   <div class="reviews-grid">
-
-    <div class="review-card">
+    <div class="review-card reveal">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="review-text">"Alpha is an exceptional coach. His approach is holistic, professional, and highly personalised. I&rsquo;ve seen more progress in 3 months with him than in years of training alone."</p>
+      <p class="review-text">&ldquo;Alpha is an exceptional coach. His approach is holistic, professional, and highly personalised. I&rsquo;ve seen more progress in 3 months with him than in years of training alone.&rdquo;</p>
       <div class="review-author">Google Review</div>
       <div class="review-meta">via Google &middot; 5 stars</div>
     </div>
-
-    <div class="review-card">
+    <div class="review-card reveal reveal-delay-1">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="review-text">"As an expat in France, finding an English-speaking trainer was a real challenge. Alpha made it seamless &mdash; bilingual coaching, a great programme, and real results."</p>
+      <p class="review-text">&ldquo;As an expat in France, finding an English-speaking trainer was a real challenge. Alpha made it seamless &mdash; bilingual coaching, a great programme, and real results.&rdquo;</p>
       <div class="review-author">Google Review</div>
       <div class="review-meta">via Google &middot; 5 stars</div>
     </div>
-
-    <div class="review-card">
+    <div class="review-card reveal reveal-delay-2">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="review-text">"Highly professional, motivating, and knowledgeable. The online format works perfectly and Alpha is always available when I need support. Strongly recommend."</p>
+      <p class="review-text">&ldquo;Highly professional, motivating, and knowledgeable. The online format works perfectly and Alpha is always available when I need support. Strongly recommend.&rdquo;</p>
       <div class="review-author">Google Review</div>
       <div class="review-meta">via Google &middot; 5 stars</div>
     </div>
-
   </div>
-  <div style="text-align:center;margin-top:40px;">
-    <a href="https://g.page/r/CfGG3j_hQfuOEAE/review" target="_blank" rel="noopener" class="btn-ghost">Leave a review on Google &rarr;</a>
+  <div class="reveal" style="text-align:center;margin-top:40px;">
+    <a href="https://g.page/r/CfGG3j_hQfuOEAE/review" target="_blank" rel="noopener" class="btn-ghost">Laisser un avis sur Google &rarr;</a>
   </div>
 </section>
 
+<!-- ─── FOOTER CTA ─────────────────────────────────────── -->
 <div class="footer-cta">
-  <p class="section-eyebrow" style="text-align:center;">Ready to start?</p>
-  <h2 class="section-title" style="max-width:580px;margin:0 auto 20px;">The best time to start was last year.<br>The second best time is <em>today.</em></h2>
-  <p style="color:var(--muted);margin-bottom:36px;font-size:15px;">30-minute free call. No commitment. Just a real conversation.</p>
-  <a href="#booking" class="btn-primary">Book your free discovery call</a>
+  <p class="section-eyebrow reveal" style="text-align:center;">Pr&ecirc;t &agrave; commencer ?</p>
+  <h2 class="section-title reveal" style="max-width:580px;margin:0 auto 20px;">The best time to start was last year.<br>The second best time is <em>today.</em></h2>
+  <p class="reveal" style="color:var(--muted);margin-bottom:36px;font-size:15px;">30-minute free call. No commitment. Just a real conversation.</p>
+  <a href="#booking" class="btn-primary reveal">Book your free discovery call</a>
+  <p class="footer-cta-fr reveal">Fa&ccedil;onnez votre meilleur vous.</p>
 </div>
 
+<!-- ─── FOOTER ─────────────────────────────────────────── -->
 <footer>
   <div>
-    <div class="footer-brand">AlphaWellness</div>
+    <div class="footer-logo-wrap">
+      <svg class="footer-logo-mark" viewBox="0 0 80 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 3 L2 72 L78 72 Z" stroke="#c8a95a" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+        <path d="M40 22 L16 68 L64 68 Z" stroke="#c8a95a" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
+        <circle cx="40" cy="46" r="3.5" fill="#c8a95a"/>
+      </svg>
+      <span class="footer-logo-name">AlphaWellness</span>
+    </div>
     <div class="footer-tagline">English speaking personal trainer and online wellness coach. Based in France. Coaching worldwide.</div>
+    <div class="footer-fr-tagline">Votre transformation, notre mission.</div>
   </div>
   <div class="footer-col">
     <a href="#who">Who I work with</a>
@@ -561,7 +716,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   </div>
   <div class="footer-legal">
     <span>&copy; 2026 AlphaWellness &mdash; English Speaking Personal Trainer France</span>
-    <span>NASM &middot; ISSA &middot; Carte Pro d'&Eacute;ducateur Sportif &middot; Auto-entrepreneur</span>
+    <span>NASM &middot; ISSA &middot; Carte Pro d&rsquo;&Eacute;ducateur Sportif &middot; Auto-entrepreneur</span>
   </div>
 </footer>
 
@@ -569,13 +724,21 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
 function toggleMenu(){
   var links=document.querySelector('.nav-links');
   var open=links.style.display==='flex';
-  links.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:rgba(12,12,11,0.98);padding:28px;gap:20px;border-bottom:1px solid rgba(200,169,90,0.18);z-index:99;';
+  links.style.cssText=open?'':'display:flex;flex-direction:column;position:fixed;top:58px;left:0;right:0;background:rgba(12,12,11,0.98);padding:28px;gap:20px;border-bottom:1px solid rgba(200,169,90,0.18);z-index:99;';
 }
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click',function(){
     if(window.innerWidth<=768){document.querySelector('.nav-links').style.cssText='';}
   });
 });
+
+/* Scroll reveal */
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el);});
 </script>
 </body>
 </html>
