@@ -276,6 +276,28 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
 .footer-col a:hover{color:var(--white);}
 .footer-legal{width:100%;padding-top:28px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 
+/* ─── GALLERY ───────────────────────────────────────── */
+.gallery{
+  background:linear-gradient(180deg,var(--dark) 0%,var(--black) 100%);
+  padding:120px 48px;position:relative;
+}
+.gallery::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:0.3;
+}
+.gallery-intro{max-width:780px;margin-bottom:56px;}
+.gallery-sub{font-size:15px;color:var(--muted);margin-top:14px;line-height:1.85;max-width:620px;}
+.gallery-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:300px 300px;gap:10px;}
+.gallery-item{position:relative;overflow:hidden;border:1px solid var(--border);background:var(--dark);}
+.gallery-item.gallery-large{grid-row:span 2;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease,filter 0.5s ease;filter:brightness(0.88) saturate(0.95);display:block;}
+.gallery-item:hover img{transform:scale(1.05);filter:brightness(1) saturate(1.05);}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.92));padding:36px 22px 20px;z-index:2;pointer-events:none;}
+.gallery-caption-fr{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--gold);margin-bottom:4px;letter-spacing:0.03em;}
+.gallery-caption-en{font-size:10.5px;color:rgba(255,255,255,0.78);letter-spacing:0.16em;text-transform:uppercase;}
+.gallery-cta{margin-top:52px;text-align:center;}
+
 /* ─── SERVICES ──────────────────────────────────────── */
 .services{
   background:linear-gradient(180deg,var(--black) 0%,var(--dark) 50%,var(--black) 100%);
@@ -367,6 +389,10 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
   .service-item{padding:20px 22px;gap:16px;}
   .service-icon{width:46px;height:46px;}
   .service-icon svg{width:22px;height:22px;}
+  .gallery{padding:64px 20px;}
+  .gallery-grid{grid-template-columns:1fr;grid-template-rows:auto;gap:8px;}
+  .gallery-item{height:260px;}
+  .gallery-item.gallery-large{height:340px;grid-row:auto;}
 }
 </style>
 </head>
@@ -616,6 +642,55 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:52px 48
       <div style="font-size:12px;color:var(--muted);margin-bottom:28px;">Starting from. Includes free discovery call.</div>
       <a href="#booking" class="btn-primary" style="display:block;text-align:center;">Book your free discovery call</a>
     </div>
+  </div>
+</section>
+
+<!-- ─── GALLERY ───────────────────────────────────────── -->
+<section class="gallery" id="gallery">
+  <div class="gallery-intro">
+    <p class="section-eyebrow reveal">Sur le Terrain</p>
+    <h2 class="section-title reveal">Real coaching. Real clients. <em>Real moments.</em></h2>
+    <p class="gallery-sub reveal">From luxury 5-star resorts in Dubai and Mauritius to private sessions in France &mdash; 8 years of hands-on coaching with clients from every background, age, and goal.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item gallery-large reveal">
+      <img src="images/client-gym.jpg" alt="Hands-on personal training session" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-fr">Coaching personnalis&eacute;</div>
+        <div class="gallery-caption-en">Hands-on &middot; every rep, every detail</div>
+      </div>
+    </div>
+    <div class="gallery-item reveal reveal-delay-1">
+      <img src="images/client-boxing.jpg" alt="Boxing & fitness training session" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-fr">Boxe &amp; fitness</div>
+        <div class="gallery-caption-en">1-on-1 sessions</div>
+      </div>
+    </div>
+    <div class="gallery-item reveal reveal-delay-2">
+      <img src="images/client-online.jpg" alt="Online video coaching session" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-fr">Coaching en ligne</div>
+        <div class="gallery-caption-en">Anywhere &middot; anytime</div>
+      </div>
+    </div>
+    <div class="gallery-item reveal reveal-delay-2">
+      <img src="images/client-group.jpg" alt="Group fitness class" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-fr">Cours collectifs</div>
+        <div class="gallery-caption-en">Community &middot; energy</div>
+      </div>
+    </div>
+    <div class="gallery-item reveal reveal-delay-3">
+      <img src="images/client-spin.jpg" alt="Spin & cycling class group" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-fr">Spin &amp; cardio</div>
+        <div class="gallery-caption-en">Group sessions</div>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-cta">
+    <a href="#booking" class="btn-primary reveal">Become the next success story</a>
   </div>
 </section>
 
